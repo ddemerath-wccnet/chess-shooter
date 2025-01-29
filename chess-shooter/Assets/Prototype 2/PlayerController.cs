@@ -37,5 +37,7 @@ public class PlayerController : MonoBehaviour
         target = target - transform.position;
         target.z = Vector2.SignedAngle(Vector2.up, new Vector2(target.x, target.y).normalized);
         mouseDir.transform.eulerAngles = new Vector3(0, 0, target.z);
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 1, 8), Mathf.Clamp(transform.position.y, 1, 8));
     }
 }
