@@ -70,7 +70,7 @@ public class MovementController : MonoBehaviour
                     takenPositions.Add(new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z)));
                 }
                 foreach (PieceMovement piece in pieces) { 
-                    piece.ExecuteMove();
+                    if (piece.isActiveAndEnabled) piece.ExecuteMove();
                 }
                 ShowWarningPos();
             }

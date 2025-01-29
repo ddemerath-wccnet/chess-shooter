@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class RookMovement : PieceMovement
 {
-    Vector3 originPos;
-    Vector3 targetPos;
+    public Vector3 originPos;
+    public Vector3 targetPos;
     float targetMoveTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
