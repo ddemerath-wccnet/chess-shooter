@@ -60,7 +60,8 @@ public class MovementController : MonoBehaviour
         }
         else
         {
-            if (cycle && Input.GetMouseButton(0))
+            if (cycle //&& Input.GetMouseButton(0)
+                )
             {
                 Time.timeScale = 1;
                 cycle = false;

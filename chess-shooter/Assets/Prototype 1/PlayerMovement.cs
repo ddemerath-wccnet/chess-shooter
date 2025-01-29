@@ -9,6 +9,7 @@ public class PlayerMovement : PieceMovement
     public Vector3 targetPos;
     float targetMoveTimer;
     public GameObject rook;
+    public GameObject rookVisual;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +54,16 @@ public class PlayerMovement : PieceMovement
         {
             rook.transform.localPosition = new Vector3();
             rook.SetActive(false);
+        }
+
+        rookVisual.transform.localScale = new Vector3(1, Mathf.Clamp(spaceTimer/(movementController.cycleTime * -5), 0, 1), 1);
+        if (Mathf.Clamp(spaceTimer / (movementController.cycleTime * -5), 0, 1) >= 1)
+        {
+            rookVisual.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        else
+        {
+            rookVisual.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
     public float spaceTimerScaled;

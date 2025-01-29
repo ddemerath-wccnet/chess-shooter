@@ -28,7 +28,15 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                FindAnyObjectByType<MovementController>().pieces.Remove(piece);
+                QueenMovement pieceQ;
+                if (collision.gameObject.TryGetComponent<QueenMovement>(out pieceQ))
+                {
+                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ);
+                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ.rookMovement);
+                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ.bishopMovement);
+                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ.kingMovement);
+                }
+                else FindAnyObjectByType<MovementController>().pieces.Remove(piece);
                 GameObject.Destroy(piece.gameObject);
             }
         }
