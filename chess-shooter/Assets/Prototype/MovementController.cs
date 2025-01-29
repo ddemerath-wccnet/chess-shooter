@@ -60,8 +60,9 @@ public class MovementController : MonoBehaviour
         }
         else
         {
-            if (cycle)
+            if (cycle && Input.GetMouseButton(0))
             {
+                Time.timeScale = 1;
                 cycle = false;
                 takenPositions.Clear();
                 warningPositions.Clear();
@@ -73,6 +74,10 @@ public class MovementController : MonoBehaviour
                     if (piece.isActiveAndEnabled) piece.ExecuteMove();
                 }
                 ShowWarningPos();
+            }
+            else if (cycle)
+            {
+                Time.timeScale = 0;
             }
         }
     }
