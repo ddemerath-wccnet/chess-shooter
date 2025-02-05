@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : PieceMovement
+public class P1_PlayerMovement : P1_PieceMovement
 {
     Vector2 buffer;
     bool spaceBuffer;

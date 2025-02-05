@@ -2,11 +2,11 @@ using Unity.Mathematics;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class QueenMovement : PieceMovement
+public class P1_QueenMovement : P1_PieceMovement
 {
-    public RookMovement rookMovement;
-    public BishopMovement bishopMovement;
-    public KingMovement kingMovement;
+    public P1_RookMovement rookMovement;
+    public P1_BishopMovement bishopMovement;
+    public P1_KingMovement kingMovement;
 
     float SwitchTimer = 0;
 

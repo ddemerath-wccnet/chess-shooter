@@ -3,15 +3,15 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class P1_MovementController : MonoBehaviour
 {
     public float cycleTime = 1;
     bool cycle = true;
     public float TillNextCycle;
     public GameObject visual;
-    public PlayerMovement player;
+    public P1_PlayerMovement player;
 
-    public List<PieceMovement> pieces = new List<PieceMovement>();
+    public List<P1_PieceMovement> pieces = new List<P1_PieceMovement>();
     public List<Vector3> takenPositions = new List<Vector3>();
     public List<int2> warningPositions = new List<int2>();
     public Dictionary<int2, SpriteRenderer> warningSprites = new Dictionary<int2, SpriteRenderer>();
@@ -41,7 +41,7 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         warningSprites.Clear();
-        player = FindAnyObjectByType<PlayerMovement>();
+        player = FindAnyObjectByType<P1_PlayerMovement>();
         foreach (Transform child in warningSpritesParent)
         {
             warningSprites.Add(new int2(Mathf.RoundToInt(child.localPosition.x), Mathf.RoundToInt(child.localPosition.y)), child.GetComponent<SpriteRenderer>());
@@ -67,11 +67,11 @@ public class MovementController : MonoBehaviour
                 cycle = false;
                 takenPositions.Clear();
                 warningPositions.Clear();
-                foreach (PieceMovement piece in pieces)
+                foreach (P1_PieceMovement piece in pieces)
                 {
                     takenPositions.Add(new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z)));
                 }
-                foreach (PieceMovement piece in pieces) { 
+                foreach (P1_PieceMovement piece in pieces) { 
                     if (piece.isActiveAndEnabled) piece.ExecuteMove();
                 }
                 ShowWarningPos();

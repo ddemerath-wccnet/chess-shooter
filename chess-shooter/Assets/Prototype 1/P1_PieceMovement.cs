@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public abstract class PieceMovement : MonoBehaviour
+public abstract class P1_PieceMovement : MonoBehaviour
 {
-    public MovementController movementController;
+    public P1_MovementController movementController;
     public void UpdateBase()
     {
         if (movementController == null)
         {
             try
             {
-                movementController = FindAnyObjectByType<MovementController>();
+                movementController = FindAnyObjectByType<P1_MovementController>();
                 if (!movementController.pieces.Contains(this)) movementController.pieces.Add(this);
             }
             catch { }

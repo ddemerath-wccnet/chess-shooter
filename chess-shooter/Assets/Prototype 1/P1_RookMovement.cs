@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-public class RookMovement : PieceMovement
+public class P1_RookMovement : P1_PieceMovement
 {
     public Vector3 originPos;
     public Vector3 targetPos;
@@ -184,12 +184,12 @@ public class RookMovement : PieceMovement
 
                     break;
 
-                    if (movementController.AttemptTarget(targetPos + Vector3.down))
-                    {
-                        targetPos += Vector3.down;
-                        break;
-                    }
-                    else continue;
+                    //if (movementController.AttemptTarget(targetPos + Vector3.down))
+                    //{
+                    //    targetPos += Vector3.down;
+                    //    break;
+                    //}
+                    //else continue;
                 }
 
                 if (loop == 3 && Mathf.RoundToInt(movementController.player.targetPos.y) < Mathf.RoundToInt(transform.position.y))
@@ -207,12 +207,12 @@ public class RookMovement : PieceMovement
 
                     break;
 
-                    if (movementController.AttemptTarget(targetPos + Vector3.up))
-                    {
-                        targetPos += Vector3.up;
-                        break;
-                    }
-                    else continue;
+                    //if (movementController.AttemptTarget(targetPos + Vector3.up))
+                    //{
+                    //    targetPos += Vector3.up;
+                    //    break;
+                    //}
+                    //else continue;
                 }
 
                 if (loop == 2 && Mathf.RoundToInt(movementController.player.targetPos.x) > Mathf.RoundToInt(transform.position.x))

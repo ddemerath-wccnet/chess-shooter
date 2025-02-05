@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RookController : MonoBehaviour
+public class P2_RookController : MonoBehaviour
 {
     public GameObject pivot;
     public GameObject targetObject;

@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class P2_PlayerController : MonoBehaviour
 {
     bool spaceBuffer;
     Vector3 moveDir;
@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) moveDir += Vector3.left;
         if (Input.GetKey(KeyCode.S)) moveDir += Vector3.down;
         if (Input.GetKey(KeyCode.D)) moveDir += Vector3.right;
+
+        if (spaceBuffer) { };
 
         moveDir.Normalize();
 

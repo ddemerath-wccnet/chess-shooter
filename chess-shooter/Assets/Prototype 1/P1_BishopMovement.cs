@@ -2,7 +2,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class BishopMovement : PieceMovement
+public class P1_BishopMovement : P1_PieceMovement
 {
     public Vector3 originPos;
     public Vector3 targetPos;

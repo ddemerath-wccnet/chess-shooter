@@ -2,7 +2,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class KingMovement : PieceMovement
+public class P1_KingMovement : P1_PieceMovement
 {
     public Vector3 originPos;
     public Vector3 targetPos;

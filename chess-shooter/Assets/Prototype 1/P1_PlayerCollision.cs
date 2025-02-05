@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerCollision : MonoBehaviour
+public class P1_PlayerCollision : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,8 +18,8 @@ public class PlayerCollision : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        PieceMovement piece;
-        if (collision.gameObject.TryGetComponent<PieceMovement>(out piece))
+        P1_PieceMovement piece;
+        if (collision.gameObject.TryGetComponent<P1_PieceMovement>(out piece))
         {
             if (piece.GetComponent<SpriteRenderer>().color == Color.red)
             {
@@ -28,15 +28,15 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                QueenMovement pieceQ;
-                if (collision.gameObject.TryGetComponent<QueenMovement>(out pieceQ))
+                P1_QueenMovement pieceQ;
+                if (collision.gameObject.TryGetComponent<P1_QueenMovement>(out pieceQ))
                 {
-                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ);
-                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ.rookMovement);
-                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ.bishopMovement);
-                    FindAnyObjectByType<MovementController>().pieces.Remove(pieceQ.kingMovement);
+                    FindAnyObjectByType<P1_MovementController>().pieces.Remove(pieceQ);
+                    FindAnyObjectByType<P1_MovementController>().pieces.Remove(pieceQ.rookMovement);
+                    FindAnyObjectByType<P1_MovementController>().pieces.Remove(pieceQ.bishopMovement);
+                    FindAnyObjectByType<P1_MovementController>().pieces.Remove(pieceQ.kingMovement);
                 }
-                else FindAnyObjectByType<MovementController>().pieces.Remove(piece);
+                else FindAnyObjectByType<P1_MovementController>().pieces.Remove(piece);
                 GameObject.Destroy(piece.gameObject);
             }
         }

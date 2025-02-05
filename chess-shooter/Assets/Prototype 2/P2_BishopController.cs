@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BishopController : MonoBehaviour
+public class P2_BishopController : MonoBehaviour
 {
     public GameObject pivot;
     public GameObject targetObject;

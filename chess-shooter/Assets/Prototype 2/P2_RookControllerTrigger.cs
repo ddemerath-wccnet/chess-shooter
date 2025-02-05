@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class RookControllerTrigger : MonoBehaviour
+public class P2_RookControllerTrigger : MonoBehaviour
 {
-    public RookController rookController;
+    public P2_RookController rookController;
     public float anticipation = 1;
     public float cooldown = 5;
 
@@ -20,9 +20,9 @@ public class RookControllerTrigger : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerController PlayerController;
+        P2_PlayerController PlayerController;
         //Debug.Log(collision.gameObject.name);
-        if (collision.TryGetComponent<PlayerController>(out PlayerController))
+        if (collision.TryGetComponent<P2_PlayerController>(out PlayerController))
         {
             if (rookController.targetMoveTimer < -cooldown)
             {
